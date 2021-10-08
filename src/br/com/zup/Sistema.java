@@ -10,10 +10,18 @@ public class Sistema {
 
     public static Cliente cadastrarCliente(){
         System.out.println("Cadastro Cliente");
-        String nome = receverDados("Digite o nome do Cliente: ").nextLine();
-        String cpf = receverDados("Digite o CPF do Cliente: ").nextLine();
-        String email = receverDados("Digite o e-mail do Cliente: ").nextLine();
-        return ServiceCliente.cadastrarCliente(nome,email,cpf);
+        String nomeCliente = receverDados("Digite o nome do Cliente: ").nextLine();
+        String cpfCliente = receverDados("Digite o CPF do Cliente: ").nextLine();
+        String emailCliente = receverDados("Digite o e-mail do Cliente: ").nextLine();
+        return ServiceCliente.cadastrarCliente(nomeCliente,emailCliente,cpfCliente);
+    }
+
+    public static Vendedor cadastrarVendedor(){
+        System.out.println("Cadastro Cliente");
+        String nomeVendedor =  receverDados("Digite o nome do Vendedor: ").nextLine();
+        String cpfVendedor = receverDados("Digite o CPF do Vendedor: ").nextLine();
+        String emailVendedor = receverDados("Digite o e-mail do Vendedor: ").nextLine();
+        return ServiceVendedor.cadastrarVendedor(nomeVendedor,emailVendedor,cpfVendedor);
     }
 
 

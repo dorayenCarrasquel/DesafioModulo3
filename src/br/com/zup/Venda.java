@@ -4,15 +4,17 @@ public class Venda {
     private Cliente cliente;
     private Vendedor vendedor;
     private double valorAPagar;
+    private String dataDeRegistro;
 
     public Venda() {
 
     }
 
-    public Venda(Cliente cliente, Vendedor vendedor, double valorAPagar) {
+    public Venda(Cliente cliente, Vendedor vendedor, double valorAPagar, String dataDeRegistro) {
         this.cliente = cliente;
         this.vendedor = vendedor;
         this.valorAPagar = valorAPagar;
+        this.dataDeRegistro = dataDeRegistro;
     }
 
     public Cliente getCliente() {
@@ -39,9 +41,18 @@ public class Venda {
         this.valorAPagar = valorAPagar;
     }
 
+    public String getDataDeRegistro() {
+        return dataDeRegistro;
+    }
+
+    public void setDataDeRegistro(String dataDeRegistro) {
+        this.dataDeRegistro = dataDeRegistro;
+    }
+
     @Override
     public String toString() {
         StringBuilder retorno = new StringBuilder();
+        retorno.append("Data de Registro: " + dataDeRegistro);
         retorno.append(cliente.toString());
         retorno.append(vendedor.toString());
         retorno.append("Valor a pagar: " + valorAPagar);

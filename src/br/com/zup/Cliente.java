@@ -9,8 +9,10 @@ public class Cliente extends Pessoa{
     public String toString() {
         StringBuilder retorno = new StringBuilder();
 
-        retorno.append("Dados do Cliente:");
+        retorno.append("\nDados do Cliente:");
+        retorno.append("\n---->");
         retorno.append(super.toString());
+        retorno.append("\n---->");
         return retorno.toString();
     }
 }

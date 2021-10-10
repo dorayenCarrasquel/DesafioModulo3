@@ -9,7 +9,8 @@ public class ServiceVenda {
 
     public static Venda cadastrarVenda(String cpfCliente, String cpfVendedor, double valorAPagar, String dataRegistro)throws Exception{
        Cliente clientevalido = ServiceCliente.pegarClienteCadas(cpfCliente);
-       Venda vendaCadastrada = new Venda(clientevalido, vendedorvalido,valorAPagar,dataRegistro);
+        Vendedor vendedorvalido = ServiceVendedor.pegarVendedorCadas(cpfVendedor);
+        Venda vendaCadastrada = new Venda(clientevalido, vendedorvalido,valorAPagar,dataRegistro);
         vendas.add(vendaCadastrada);
         return vendaCadastrada;
     }

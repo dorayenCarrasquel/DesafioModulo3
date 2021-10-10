@@ -1,12 +1,15 @@
 package br.com.zup;
 
+import java.security.Provider;
+
 public class Main {
 
     public static void main(String[] args) {
-        Cliente clienteCadastro = Sistema.cadastrarCliente();
-
-        System.out.println(ServiceCliente.clientes);
-
+        try {
+           Sistema.executar();
+        }catch (Exception erro){
+            System.out.println(erro.getMessage());
+        }
 
 
 

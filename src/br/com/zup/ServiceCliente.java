@@ -7,7 +7,8 @@ public class ServiceCliente {
 
     public static List<Cliente> clientes = new ArrayList<>();
 
-    public static Cliente cadastrarCliente(String nome, String email, String cpf) {
+    public static Cliente cadastrarCliente(String nome, String email, String cpf) throws Exception{
+        validarEmailEscrita(email);
         Cliente clientecadastrado = new Cliente(nome, email, cpf);
         clientes.add(clientecadastrado);
         return clientecadastrado;
@@ -19,5 +20,13 @@ public class ServiceCliente {
                 return cpfreferencia;
             }
         }throw new Exception("Cliente NÃO cadastrado. ");
+    }
+
+    public static void validarEmailEscrita(String email)throws Exception{
+        for (Cliente emailReferencia : clientes){
+            if (!email.contentEquals("@")) {
+                throw new Exception("O e-mail digitado não é valido");
+            }
+        }
     }
 }

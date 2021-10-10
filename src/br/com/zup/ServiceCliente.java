@@ -9,6 +9,8 @@ public class ServiceCliente {
 
     public static Cliente cadastrarCliente(String nome, String email, String cpf) throws Exception{
         validarEmailEscrita(email);
+        validaEmailRepetido(email);
+
         Cliente clientecadastrado = new Cliente(nome, email, cpf);
 
         clientes.add(clientecadastrado);
@@ -26,6 +28,13 @@ public class ServiceCliente {
     public static void validarEmailEscrita(String email)throws Exception{
         if (!email.contains("@")) {
                 throw new Exception("O e-mail digitado não é valido");
+        }
+    }
+    public static void validaEmailRepetido(String email)throws Exception{
+        for (Cliente emailReferencia: clientes){
+            if (email.equalsIgnoreCase(emailReferencia.getEmail()) ){
+                throw new Exception("Email Ja cadastrado.");
+            }
         }
     }
 

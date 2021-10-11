@@ -9,6 +9,7 @@ public class ServiceVendedor {
     public static Vendedor cadastrarVendedor(String nome, String email, String cpf) throws Exception{
         validarEmailEscrita(email);
         validaEmailRepetido(email);
+        validarCPFRepetido(cpf);
 
         Vendedor vendedorCadastrado = new Vendedor(nome, email, cpf);
         vendedores.add(vendedorCadastrado);
@@ -31,6 +32,13 @@ public class ServiceVendedor {
         for (Vendedor emailReferencia: vendedores){
             if (email.equalsIgnoreCase(emailReferencia.getEmail()) ){
                 throw new Exception("Email Ja cadastrado.");
+            }
+        }
+    }
+    public static void validarCPFRepetido(String cpf)throws Exception{
+        for (Vendedor cpfReferencia: vendedores){
+            if (cpf.equalsIgnoreCase(cpfReferencia.getCpf()) ){
+                throw new Exception("CPF Ja cadastrado.");
             }
         }
     }

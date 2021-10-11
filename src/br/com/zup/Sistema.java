@@ -16,7 +16,7 @@ public class Sistema {
         return ServiceCliente.cadastrarCliente(nomeCliente, emailCliente, cpfCliente);
     }
 
-    public static Vendedor cadastrarVendedor() {
+    public static Vendedor cadastrarVendedor() throws Exception{
         System.out.println("Cadastro Vendedor");
         String nomeVendedor = receverDados("Digite o nome do Vendedor: ").nextLine();
         String cpfVendedor = receverDados("Digite o CPF do Vendedor: ").nextLine();

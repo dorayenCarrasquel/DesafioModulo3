@@ -8,13 +8,12 @@ public class ServiceCliente {
     public static List<Cliente> clientes = new ArrayList<>();
 
     public static Cliente cadastrarCliente(String nome, String email, String cpf) throws Exception{
-        validarEmailEscrita(email);
-        validaEmailRepetido(email);
-        validarCPFRepetido(cpf);
+        ServicePessoa.vamAPasarAProba(email,cpf);
 
         Cliente clientecadastrado = new Cliente(nome, email, cpf);
 
         clientes.add(clientecadastrado);
+        ServicePessoa.listavalidada();
         return clientecadastrado;
     }
 

@@ -7,10 +7,7 @@ public class ServiceVendedor {
     public static List<Vendedor> vendedores = new ArrayList<>();
 
     public static Vendedor cadastrarVendedor(String nome, String email, String cpf) throws Exception{
-        ServicePessoa.validarEmailEscrita(email);
-        ServicePessoa.validaEmailRepetido(email);
-        ServicePessoa.validarCPFRepetido(cpf);
-
+        ServicePessoa.vamAPasarAProba(email, cpf);
         Vendedor vendedorCadastrado = new Vendedor(nome, email, cpf);
         vendedores.add(vendedorCadastrado);
         ServicePessoa.listavalidada();

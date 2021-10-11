@@ -30,4 +30,10 @@ public class ServicePessoa {
         }
     }
 
+    public static void vamAPasarAProba(String email, String cpf)throws Exception{
+        validarEmailEscrita(email);
+        validaEmailRepetido(email);
+        validarCPFRepetido(cpf);
+    }
+
 }

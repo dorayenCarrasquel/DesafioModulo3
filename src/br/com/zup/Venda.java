@@ -52,12 +52,12 @@ public class Venda {
     @Override
     public String toString() {
         StringBuilder retorno = new StringBuilder();
-        retorno.append("\n---V-E-N-D-A---=>");
-        retorno.append("\nData de Registro: " + dataDeRegistro);
+        retorno.append("\n---------V-E-N-D-A---------=>");
+        retorno.append("\nData de Registro: \t" + dataDeRegistro);
         retorno.append(cliente.toString());
         retorno.append(vendedor.toString());
-        retorno.append("\nValor a pagar: " + valorAPagar);
-        retorno.append("\n---------------=>");
+        retorno.append("\nValor a pagar: \t" + valorAPagar);
+        retorno.append("\n---------------------------=>");
         return retorno.toString();
     }
 }

@@ -3,6 +3,7 @@ package br.com.zup;
 import java.util.Scanner;
 
 public class Sistema {
+    public static boolean menuprincipalloop = true;
     private static Scanner receverDados(String mensagem) {
         System.out.println(mensagem);
         return new Scanner(System.in);
@@ -64,10 +65,9 @@ public class Sistema {
     }
 
     public static void executar() throws Exception {
-        boolean menuprincipalloop = true;
+
         while (menuprincipalloop) {
             menuPrincipal();
-
             int opcaomenu = receverDados("Digite uma opção: ").nextInt();
             if (opcaomenu == 1) {
                 cadastrarCliente();
@@ -94,6 +94,14 @@ public class Sistema {
         }
 
     }
-
+    public static void mainExecutar(){
+        while (menuprincipalloop) {
+            try {
+                Sistema.executar();
+            } catch (Exception erro) {
+                System.out.println(erro.getMessage());
+            }
+        }
+    }
 
 }

@@ -10,9 +10,9 @@ public class Vendedor extends Pessoa{
         StringBuilder retorno = new StringBuilder();
 
         retorno.append("\nDados do Vendedor:");
-        retorno.append("\n----*");
+        retorno.append("\n--------------------*");
         retorno.append(super.toString());
-        retorno.append("\n----*");
+        retorno.append("\n--------------------*");
         return retorno.toString();
     }
 }

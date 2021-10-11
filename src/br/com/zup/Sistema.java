@@ -8,7 +8,7 @@ public class Sistema {
         return new Scanner(System.in);
     }
 
-    public static Cliente cadastrarCliente() throws Exception{
+    public static Cliente cadastrarCliente() throws Exception {
         System.out.println("Cadastro Cliente");
         String nomeCliente = receverDados("Digite o nome do Cliente: ").nextLine();
         String cpfCliente = receverDados("Digite o CPF do Cliente: ").nextLine();
@@ -16,7 +16,7 @@ public class Sistema {
         return ServiceCliente.cadastrarCliente(nomeCliente, emailCliente, cpfCliente);
     }
 
-    public static Vendedor cadastrarVendedor() throws Exception{
+    public static Vendedor cadastrarVendedor() throws Exception {
         System.out.println("Cadastro Vendedor");
         String nomeVendedor = receverDados("Digite o nome do Vendedor: ").nextLine();
         String cpfVendedor = receverDados("Digite o CPF do Vendedor: ").nextLine();
@@ -33,16 +33,16 @@ public class Sistema {
         return ServiceVenda.cadastrarVenda(cpfCliente, cpfVendedor, valorAPagar, dataRegistro);
     }
 
-    public static void pesquizarCliente()throws Exception{
+    public static void pesquisarCliente() throws Exception {
         System.out.println("Pesquizar compras feitas do Cliente por CPF:");
         String cpfPesquizar = receverDados("Digite o CPF do Cliente: ").nextLine();
-        ServiceVenda.pesquizarComprasCliente(cpfPesquizar);
+        ServiceVenda.pesquisarComprasCliente(cpfPesquizar);
     }
 
-    public static void pesquizarVendas()throws Exception{
+    public static void pesquisarVendas() throws Exception {
         System.out.println("Pesquizar Vendas feitas por e-mail Vendedor:");
         String emailPesquizar = receverDados("Digite o e-mail do Vendedor: ").nextLine();
-        ServiceVenda.pesquizarVendasVendedor(emailPesquizar);
+        ServiceVenda.pesquisarVendasVendedor(emailPesquizar);
     }
 
     public static void menuPrincipal() {
@@ -53,11 +53,12 @@ public class Sistema {
         System.out.println(" [4] Listar Vendas");
         System.out.println(" [5] Listar vendedores");
         System.out.println(" [6] Listar Clientes");
-        System.out.println(" [7] Pesquizar Compras X Cliente");
-        System.out.println(" [8] Pesquizar Compras X Vendedor");
+        System.out.println(" [7] Pesquisar Compras X Cliente");
+        System.out.println(" [8] Pesquisar Compras X Vendedor");
         System.out.println(" [9] Sair");
     }
-    public static void menuPesquizar()throws Exception{
+
+    public static void menuPesquisar() throws Exception {
         int opcaomenu4 = receverDados("Digite uma opção: ").nextInt();
 
     }
@@ -80,16 +81,14 @@ public class Sistema {
                 System.out.println(ServiceVendedor.vendedores);
             } else if (opcaomenu == 6) {
                 System.out.println(ServiceCliente.clientes);
-            } else if (opcaomenu == 7){
-                pesquizarCliente();
-            }
-            else if (opcaomenu==8){
-                pesquizarVendas();
-            }
-            else if (opcaomenu == 9) {
+            } else if (opcaomenu == 7) {
+                pesquisarCliente();
+            } else if (opcaomenu == 8) {
+                pesquisarVendas();
+            } else if (opcaomenu == 9) {
                 System.out.println("¡Adiós! Vuelva Siempre");
                 menuprincipalloop = false;
-            }else{
+            } else {
                 System.out.println("Digite uma opção valida!");
             }
         }

@@ -20,6 +20,11 @@ public class ServiceVendedor {
             }
         }throw new Exception ("Vendedor NÃO cadastrado");
     }
+    public static void validarEmailEscrita(String email)throws Exception{
+        if (!email.contains("@")) {
+            throw new Exception("O e-mail digitado não é valido");
+        }
+    }
 
 
 }

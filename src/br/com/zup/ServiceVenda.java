@@ -21,23 +21,24 @@ public class ServiceVenda {
             if (cpfReferencia.getCliente().getCpf().equals(cpf)) {
                 comprasCliente.add(cpfReferencia);
             }
-            if (comprasCliente.isEmpty()) {
+        }if (comprasCliente.isEmpty()) {
                 throw new Exception("CPF Cliente não cadastrado");
             }
-        }
+
         System.out.println(comprasCliente);
     }
 
     public static void pesquisarVendasVendedor(String email) throws Exception {
         List<Venda> vendasVendedor = new ArrayList<>();
         for (Venda emailReferencia : vendas) {
-            if (emailReferencia.getCliente().getEmail().equals(email)) {
+            if (emailReferencia.getVendedor().getEmail().equalsIgnoreCase(email)) {
                 vendasVendedor.add(emailReferencia);
             }
+        }
             if (vendasVendedor.isEmpty()) {
                 throw new Exception("E-mail Vendedor não cadastrado");
             }
-        }
+
         System.out.println(vendasVendedor);
     }
 

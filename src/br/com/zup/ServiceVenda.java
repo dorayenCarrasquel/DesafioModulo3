@@ -18,8 +18,16 @@ public class ServiceVenda {
         for (Venda cpfReferencia : vendas){
             if (cpfReferencia.getCliente().getCpf().equals(cpf)){
                 System.out.println(cpfReferencia);
-            }
-        }throw new Exception("E-mail Cliente não cadastrado");
+            }throw new Exception("CPF Cliente não cadastrado");
+        }
+    }
+
+    public static void pesquizarVendasVendedor(String email) throws Exception{
+        for (Venda emailReferencia : vendas){
+            if (emailReferencia.getCliente().getEmail().equalsIgnoreCase(email)){
+                System.out.println(emailReferencia);
+            }throw new Exception("E-mail Vendedor não cadastrado");
+        }
     }
 
 }

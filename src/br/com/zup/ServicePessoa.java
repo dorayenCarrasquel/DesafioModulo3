@@ -10,7 +10,6 @@ public class ServicePessoa {
         pessoasValidar.addAll(ServiceVendedor.vendedores);
         pessoasValidar.addAll(ServiceCliente.clientes);
     }
-
     public static void validarEmailEscrita(String email)throws Exception{
         if (!email.contains("@")) {
             throw new Exception("O e-mail digitado não é valido");
@@ -30,4 +29,5 @@ public class ServicePessoa {
             }
         }
     }
+
 }

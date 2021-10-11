@@ -14,5 +14,12 @@ public class ServiceVenda {
         vendas.add(vendaCadastrada);
         return vendaCadastrada;
     }
+    public static void pesquizarComprasCliente(String cpf)throws Exception{
+        for (Venda cpfReferencia : vendas){
+            if (cpfReferencia.getCliente().getCpf().equals(cpf)){
+                System.out.println(cpfReferencia);
+            }
+        }throw new Exception("E-mail Cliente não cadastrado");
+    }
 
 }

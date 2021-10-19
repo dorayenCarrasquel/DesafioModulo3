@@ -21,25 +21,4 @@ public class ServiceVendedor {
             }
         }throw new Exception ("Vendedor NÃO cadastrado");
     }
-//    public static void validarEmailEscrita(String email)throws Exception{
-//        if (!email.contains("@")) {
-//            throw new Exception("O e-mail digitado não é valido");
-//        }
-//    }
-//    public static void validaEmailRepetido(String email)throws Exception{
-//        for (Vendedor emailReferencia: vendedores){
-//            if (email.equalsIgnoreCase(emailReferencia.getEmail()) ){
-//                throw new Exception("Email Ja cadastrado.");
-//            }
-//        }
-//    }
-//    public static void validarCPFRepetido(String cpf)throws Exception{
-//        for (Vendedor cpfReferencia: vendedores){
-//            if (cpf.equalsIgnoreCase(cpfReferencia.getCpf()) ){
-//                throw new Exception("CPF Ja cadastrado.");
-//            }
-//        }
-//    }
-
-
 }

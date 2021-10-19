@@ -25,23 +25,4 @@ public class ServiceCliente {
         }throw new Exception("Cliente NÃO cadastrado. ");
     }
 
-    public static void validarEmailEscrita(String email)throws Exception{
-        if (!email.contains("@")) {
-                throw new Exception("O e-mail digitado não é valido");
-        }
-    }
-    public static void validaEmailRepetido(String email)throws Exception{
-        for (Cliente emailReferencia: clientes){
-            if (email.equalsIgnoreCase(emailReferencia.getEmail()) ){
-                throw new Exception("Email Ja cadastrado.");
-            }
-        }
-    } public static void validarCPFRepetido(String cpf)throws Exception{
-        for (Cliente cpfReferencia: clientes){
-            if (cpf.equalsIgnoreCase(cpfReferencia.getCpf()) ){
-                throw new Exception("CPF Ja cadastrado.");
-            }
-        }
-    }
-
 }

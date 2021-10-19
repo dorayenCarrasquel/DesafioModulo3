@@ -33,7 +33,15 @@ public class ServicePessoa {
     public static void vamAPasarAProba(String email, String cpf)throws Exception{
         validarEmailEscrita(email);
         validaEmailRepetido(email);
-        validarCPFRepetido(cpf);
+        String cpfValido = usuarioBurroDigitandoCPF(cpf);
+        validarCPFRepetido(cpfValido);
     }
+//Testando apagar characteres adicionais no CPF
+    public static String usuarioBurroDigitandoCPF(String cpf) {
 
+        cpf.replaceAll("-", "");
+        cpf.replaceAll(".", "");
+
+        return cpf;
+    }
 }
